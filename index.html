@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Audio DFT</title>
+        <script src=graph.js defer></script>
+        <style>
+            #graph_canvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                z-index: -1;
+            }
+            input#mute {
+                display: none;
+            }
+            .unmute img {
+                display: none;
+            }
+            input#mute:checked ~ .unmute img {
+                display: initial;
+            }
+            input#mute:checked ~ .mute img {
+                display: none;
+            }
+            .mute img {
+                width: 30px;
+            }
+            .unmute img {
+                width: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="checkbox" id="mute">
+        <label for="mute" class="mute"><img src="mute.svg""></label>
+        <label for="mute" class="unmute"><img src="unmute.svg""></label>
+        <canvas id="graph_canvas" />
+    </body>
+</html>
+
