@@ -50,6 +50,7 @@ class AudioHandler {
         // ^ this would be required to fill whole screen
         // the following makes it even larger to zoom in on relevant frequencies:
         let new_fft_size = 2**(Math.round(Math.log2(height)) + 1 + 4);
+        new_fft_size = Math.min(new_fft_size, 32768);
         if (this.fft.fftSize != new_fft_size) {
             this.fft.fftSize = new_fft_size;
         }
